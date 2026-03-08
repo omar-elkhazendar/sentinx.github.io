@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SentinX Systems - Banking, Airline, and Medical applications feeding the central security brain.">
+    <title>SentinX Systems | Bank · Airline · Medical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-link">
+                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="systems.html" class="active">Systems</a></li>
+                <li><a href="dashboard.html">Security Dashboard</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero--subpage">
+            <h1>Business Systems</h1>
+            <p class="tagline">Three realistic apps acting as live security sensors</p>
+            <p>Each domain—Banking, Airline, and Medical—is a complete application with its own users, workflows, and security telemetry, all streaming into the SentinX Security Platform.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Bank System</h2>
+            <p class="section-subtitle">Full online banking with built‑in security and detailed audit trails</p>
+
+            <div class="systems-grid">
+                <div class="system-card">
+                    <span class="badge">BUSINESS FEATURES</span>
+                    <h3><span class="icon">🏦</span> Digital banking experience</h3>
+                    <ul>
+                        <li>Customer lifecycle: registration, login, profile, and KYC (national ID, phone, address).</li>
+                        <li>Accounts: saving, current, prepaid accounts with balances and statements.</li>
+                        <li>Cards: debit/credit/prepaid requests, issuance, blocking/unblocking, and card limits.</li>
+                        <li>Money movement: internal transfers, bill payments, deposits, and withdrawals.</li>
+                        <li>Loans: loan requests, document uploads, schedules, and installment views.</li>
+                        <li>Notifications: in‑app messages for approvals, alerts, and support.</li>
+                    </ul>
+                </div>
+
+                <div class="system-card">
+                    <span class="badge">SECURITY & LOGGING</span>
+                    <h3><span class="icon">🛡️</span> Local security sensor</h3>
+                    <ul>
+                        <li>Strong passwords, national ID validation, and optional multi‑factor authentication.</li>
+                        <li>Tracking of logins, failures, logouts, password resets, and profile changes.</li>
+                        <li>High‑value operations logged (large transfers, new device logins, card blocks).</li>
+                        <li>Attack detection layer for SQL injection, XSS, path traversal, command injection, and suspicious file uploads.</li>
+                        <li>Brute‑force detection based on failed logins per IP/email over time windows.</li>
+                        <li>Structured security events (who, what, when, where, severity, context) pushed to the SentinX Security Dashboard.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Airline System</h2>
+            <p class="section-subtitle">Modern travel booking with OAuth login and fine‑grained monitoring</p>
+
+            <div class="systems-grid">
+                <div class="system-card">
+                    <span class="badge">BUSINESS FEATURES</span>
+                    <h3><span class="icon">✈️</span> Booking portal</h3>
+                    <ul>
+                        <li>User accounts with registration and classic login.</li>
+                        <li>OAuth integration with Google and GitHub for quick sign‑in.</li>
+                        <li>Flight search by destination, dates, and trip type.</li>
+                        <li>End‑to‑end booking: flight → seat/class → extras → confirmation.</li>
+                        <li>“My bookings” area, profile management, comments, and support.</li>
+                        <li>Admin console for offers, prices, classes, users, and comment moderation.</li>
+                    </ul>
+                </div>
+
+                <div class="system-card">
+                    <span class="badge">SECURITY & LOGGING</span>
+                    <h3><span class="icon">🛰️</span> Telemetry‑rich application</h3>
+                    <ul>
+                        <li>Centralized input sanitization and validation to reduce XSS and injection risk.</li>
+                        <li>Logging of user actions (search, start booking, confirm/cancel booking).</li>
+                        <li>Auth events: login successes/failures, admin logins, password reset flows.</li>
+                        <li>Admin operations: creating offers, changing prices, moderating content.</li>
+                        <li>Technical events: database errors and exceptions captured for analysis.</li>
+                        <li>Security‑perspective events such as repeated failed logins or suspicious payloads.</li>
+                        <li>Batch or real‑time JSON logs pushed to the Dashboard with system name, category, severity, IP, user id/email, user agent, and context.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Medical System</h2>
+            <p class="section-subtitle">Healthcare workflows with strong access control and sensitive‑data logging</p>
+
+            <div class="systems-grid">
+                <div class="system-card">
+                    <span class="badge">BUSINESS FEATURES</span>
+                    <h3><span class="icon">🏥</span> Healthcare management</h3>
+                    <ul>
+                        <li>Roles for patients, doctors, and admins with dedicated dashboards.</li>
+                        <li>Patient data including DOB, gender, blood type, and medical history.</li>
+                        <li>Appointment scheduling and management between doctors and patients.</li>
+                        <li>Medical records, prescriptions, and downloadable lab results or PDFs.</li>
+                        <li>Admin tools for user management and uploading patient files.</li>
+                    </ul>
+                </div>
+
+                <div class="system-card">
+                    <span class="badge">SECURITY & LOGGING</span>
+                    <h3><span class="icon">🔒</span> Protected medical context</h3>
+                    <ul>
+                        <li>Dedicated session namespace so it does not clash with the Airline system.</li>
+                        <li>Strict directory control—config, vendor, and logs are protected; uploads are non‑executable.</li>
+                        <li>Role‑based authentication and routing for patient/doctor/admin dashboards.</li>
+                        <li>Rate limiting and lockout after repeated failed logins from a single IP.</li>
+                        <li>Logs for logins/logouts, profile changes, appointments, and record updates.</li>
+                        <li>Monitoring of access to sensitive resources such as prescriptions and files.</li>
+                        <li>Events buffered and sent to the Dashboard with system name, user id/role/email, action, IP, endpoint, HTTP method, timestamp, and severity.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="logo/white_logo.png" alt="SentinX" class="footer-logo">
+            <p style="color: var(--text-secondary); font-weight: 600;">SentinX Security Platform</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">AI-Powered Cyber Threat Prevention · Alexandria, Egypt</p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/sentinx_?igsh=MWtjYTh2NGR0Nnk4Mg==" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://x.com/sentin_x" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                <a href="https://www.linkedin.com/company/sentinx-security-platform/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.tiktok.com/@sentinx_?_r=1&_t=ZS-94VnYDdmFZE" target="_blank" rel="noopener noreferrer">TikTok</a>
+            </div>
+
+            <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
