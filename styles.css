@@ -714,6 +714,9 @@ footer::before {
 /* Responsive Styling */
 @media (max-width: 900px) {
     nav {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
         padding: 0.9rem 1.25rem;
     }
 
@@ -762,6 +765,8 @@ footer::before {
     }
     
     section {
+        width: 100%;
+        max-width: 100%;
         padding: 4rem 1.5rem;
     }
     
@@ -772,7 +777,7 @@ footer::before {
 
 @media (max-width: 600px) {
     .hero {
-        padding: 7rem 1.3rem 3.5rem;
+        padding: 7rem 1.1rem 3.5rem;
     }
 
     .hero h1 {
@@ -784,15 +789,23 @@ footer::before {
     }
 
     section {
-        padding: 3.5rem 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        padding: 3rem 1rem;
+    }
+
+    .systems-grid,
+    .why-grid,
+    .dashboard-features {
+        gap: 1.5rem;
     }
 
     .glass-panel {
-        padding: 1.6rem;
+        padding: 1.4rem;
     }
 
     .card {
-        padding: 1.8rem;
+        padding: 1.6rem;
     }
 
     .hero-actions {
