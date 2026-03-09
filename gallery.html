@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SentinX Security Platform - Project Gallery and Team Moments.">
+    <title>Gallery | SentinX Security Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo-link">
+                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="systems.html">Systems</a></li>
+                <li><a href="dashboard.html">Security Dashboard</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero hero--subpage">
+            <h1>Project <span class="text-gradient">Gallery</span></h1>
+            <p class="tagline">Behind the scenes of SentinX</p>
+            <p>A look at the graduation project presentation and the team behind the AI-powered cybersecurity platform.</p>
+        </section>
+
+        <!-- Presentation Section -->
+        <section id="presentation">
+            <h2 class="section-title">Project <span class="text-gradient-accent">Presentation</span></h2>
+            <p class="section-subtitle">Showcasing the SentinX platform</p>
+            
+            <div class="glass-panel" style="padding: 1rem;">
+                <!-- User should place 'presentation.jpeg' in team_photos/ -->
+                <img src="team_photos/presentation.jpeg" alt="SentinX Project Presentation" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+            </div>
+        </section>
+
+        <!-- Team Moments Section -->
+        <section id="team-moments">
+            <h2 class="section-title">Team <span class="text-gradient-accent">Moments</span></h2>
+            <p class="section-subtitle">Collaborating on the future of security</p>
+            
+            <div class="systems-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+                <div class="glass-panel" style="padding: 1rem; margin-bottom: 0;">
+                    <!-- User should place 'group1.jpeg' in team_photos/ -->
+                    <img src="team_photos/group1.jpeg" alt="SentinX Team Group Photo 1" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;">
+                </div>
+                
+                <div class="glass-panel" style="padding: 1rem; margin-bottom: 0;">
+                    <!-- User should place 'group2.jpeg' in team_photos/ -->
+                    <img src="team_photos/group2.jpeg" alt="SentinX Team Group Photo 2" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="logo/white_logo.png" alt="SentinX" class="footer-logo">
+            <p style="color: var(--text-secondary); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">SentinX Security Platform</p>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">AI-Powered Cyber Threat Prevention · Alexandria, Egypt</p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/sentinx_?igsh=MWtjYTh2NGR0Nnk4Mg==" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="https://x.com/sentin_x" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+                <a href="https://www.linkedin.com/company/sentinx-security-platform/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.tiktok.com/@sentinx_?_r=1&_t=ZS-94VnYDdmFZE" target="_blank" rel="noopener noreferrer">TikTok</a>
+                <a href="https://www.facebook.com/share/1HbMeu9Ujn/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a href="https://www.threads.com/@sentinx_" target="_blank" rel="noopener noreferrer">Threads</a>
+                <a href="https://youtube.com/@sentinxsecurityplatform?si=x7_LFe5lkn8Zfjtu" target="_blank" rel="noopener noreferrer">YouTube</a>
+            </div>
+
+            <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const elementsToReveal = document.querySelectorAll('.card, .dashboard-feature, .section-title, .section-subtitle, .glass-panel, .big-picture blockquote');
+            elementsToReveal.forEach(el => el.classList.add('reveal'));
+
+            const observer = new IntersectionObserver((entries) => {
+                let delay = 0;
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add("active");
+                        }, delay);
+                        delay += 100; // Stagger effect
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
+            
+            elementsToReveal.forEach(reveal => observer.observe(reveal));
+        });
+    </script>
+</body>
+</html>
