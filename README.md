@@ -1,1 +1,0 @@
-# sentinx.github.io
