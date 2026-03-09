@@ -92,7 +92,7 @@ header {
     backdrop-filter: var(--blur-glass);
     -webkit-backdrop-filter: var(--blur-glass);
     border-bottom: 1px solid var(--border-light);
-    transition: all var(--transition-medium);
+    transition: background var(--transition-medium), border-color var(--transition-medium), box-shadow var(--transition-medium), transform var(--transition-medium);
 }
 
 nav {
@@ -102,6 +102,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .logo-link {
@@ -119,6 +125,54 @@ nav {
     height: 44px;
     width: auto;
     filter: drop-shadow(0 0 8px rgba(255,255,255,0.2));
+}
+
+.nav-toggle {
+    display: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 1px solid var(--border-light);
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: var(--blur-glass);
+    -webkit-backdrop-filter: var(--blur-glass);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.nav-toggle:hover {
+    background: rgba(15, 23, 42, 1);
+    border-color: var(--accent-primary);
+    transform: translateY(-1px);
+}
+
+.nav-toggle-bar {
+    width: 18px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--text-secondary);
+    transition: transform var(--transition-fast), opacity var(--transition-fast), background var(--transition-fast);
+}
+
+.nav-toggle-bar + .nav-toggle-bar {
+    margin-top: 4px;
+}
+
+.nav-toggle--open .nav-toggle-bar:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+    background: var(--accent-primary);
+}
+
+.nav-toggle--open .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle--open .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+    background: var(--accent-primary);
 }
 
 .nav-links {
@@ -161,6 +215,13 @@ nav {
 .nav-links a.active {
     color: var(--accent-primary);
     text-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.header--scrolled {
+    background: rgba(3, 7, 18, 0.92);
+    border-color: var(--border-medium);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    transform: translateY(0);
 }
 
 /* Animations */
@@ -406,7 +467,7 @@ section {
 }
 
 .systems-grid {
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
 .why-grid {
@@ -652,10 +713,46 @@ footer::before {
 
 /* Responsive Styling */
 @media (max-width: 900px) {
-    .nav-links {
-        display: none; /* In a real app we'd add a hamburger menu */
+    nav {
+        padding: 0.9rem 1.25rem;
     }
-    
+
+    .nav-toggle {
+        display: inline-flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 1.25rem;
+        left: 1.25rem;
+        margin-top: 0.75rem;
+        padding: 1rem 1.25rem;
+        border-radius: 16px;
+        background: rgba(15, 23, 42, 0.98);
+        backdrop-filter: var(--blur-glass);
+        -webkit-backdrop-filter: var(--blur-glass);
+        border: 1px solid var(--border-medium);
+        flex-direction: column;
+        gap: 0.5rem;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+        display: none;
+    }
+
+    .nav-links--open {
+        display: flex;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 0.6rem 0.25rem;
+    }
+
     .hero {
         padding: 8rem 1.5rem 4rem;
     }
@@ -671,6 +768,48 @@ footer::before {
     .glass-panel {
         padding: 2rem;
     }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 7rem 1.3rem 3.5rem;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 3.5rem 1.5rem;
+    }
+
+    .glass-panel {
+        padding: 1.6rem;
+    }
+
+    .card {
+        padding: 1.8rem;
+    }
+
+    .hero-actions {
+        gap: 1rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+/* Accessible focus outlines */
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 3px;
 }
 
 /* Scroll Reveal Animations */

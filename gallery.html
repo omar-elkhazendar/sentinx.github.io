@@ -10,9 +10,16 @@
 <body>
     <header>
         <nav>
-            <a href="index.html" class="logo-link">
-                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
-            </a>
+            <div class="nav-left">
+                <a href="index.html" class="logo-link">
+                    <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+                </a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+                <span class="nav-toggle-bar"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="systems.html">Systems</a></li>
@@ -46,7 +53,7 @@
             <h2 class="section-title">Team <span class="text-gradient-accent">Moments</span></h2>
             <p class="section-subtitle">Collaborating on the future of security</p>
             
-            <div class="systems-grid" style="grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));">
+            <div class="systems-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
                 <div class="glass-panel" style="padding: 1rem; margin-bottom: 0;">
                     <!-- User should place 'group1.jpeg' in team_photos/ -->
                     <img src="team_photos/group1.jpeg" alt="SentinX Team Group Photo 1" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;">
@@ -79,26 +86,6 @@
             <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
         </div>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const elementsToReveal = document.querySelectorAll('.card, .dashboard-feature, .section-title, .section-subtitle, .glass-panel, .big-picture blockquote');
-            elementsToReveal.forEach(el => el.classList.add('reveal'));
-
-            const observer = new IntersectionObserver((entries) => {
-                let delay = 0;
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        setTimeout(() => {
-                            entry.target.classList.add("active");
-                        }, delay);
-                        delay += 100; // Stagger effect
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-            
-            elementsToReveal.forEach(reveal => observer.observe(reveal));
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
