@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SentinX Systems - Banking, Airline, and Medical applications feeding the central security brain.">
     <title>SentinX Systems | Bank · Airline · Medical</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="nav-left">
-                <a href="index.html" class="logo-link">
-                    <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+            <a href="index.html" class="logo-link">
+                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false" type="button">
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="systems.html" class="active">Systems</a></li>
                 <li><a href="dashboard.html">Security Dashboard</a></li>
@@ -32,17 +34,17 @@
 
     <main>
         <section class="hero hero--subpage">
-            <h1>Business <span class="text-gradient">Systems</span></h1>
+            <h1>Business Systems</h1>
             <p class="tagline">Three realistic apps acting as live security sensors</p>
             <p>Each domain—Banking, Airline, and Medical—is a complete application with its own users, workflows, and security telemetry, all streaming into the SentinX Security Platform.</p>
         </section>
 
         <section>
-            <h2 class="section-title">Bank <span class="text-gradient-accent">System</span></h2>
+            <h2 class="section-title">Bank System</h2>
             <p class="section-subtitle">Full online banking with built‑in security and detailed audit trails</p>
 
             <div class="systems-grid">
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">BUSINESS FEATURES</span>
                     <h3><span class="icon">🏦</span> Digital banking experience</h3>
                     <ul>
@@ -55,7 +57,7 @@
                     </ul>
                 </div>
 
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">SECURITY & LOGGING</span>
                     <h3><span class="icon">🛡️</span> Local security sensor</h3>
                     <ul>
@@ -71,11 +73,11 @@
         </section>
 
         <section>
-            <h2 class="section-title">Airline <span class="text-gradient-accent">System</span></h2>
+            <h2 class="section-title">Airline System</h2>
             <p class="section-subtitle">Modern travel booking with OAuth login and fine‑grained monitoring</p>
 
             <div class="systems-grid">
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">BUSINESS FEATURES</span>
                     <h3><span class="icon">✈️</span> Booking portal</h3>
                     <ul>
@@ -88,7 +90,7 @@
                     </ul>
                 </div>
 
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">SECURITY & LOGGING</span>
                     <h3><span class="icon">🛰️</span> Telemetry‑rich application</h3>
                     <ul>
@@ -98,18 +100,18 @@
                         <li>Admin operations: creating offers, changing prices, moderating content.</li>
                         <li>Technical events: database errors and exceptions captured for analysis.</li>
                         <li>Security‑perspective events such as repeated failed logins or suspicious payloads.</li>
-                        <li>Batch or real‑time JSON logs pushed to Dashboard with system name, category, severity, IP, etc.</li>
+                        <li>Batch or real‑time JSON logs pushed to the Dashboard with system name, category, severity, IP, user id/email, user agent, and context.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Medical <span class="text-gradient-accent">System</span></h2>
+            <h2 class="section-title">Medical System</h2>
             <p class="section-subtitle">Healthcare workflows with strong access control and sensitive‑data logging</p>
 
             <div class="systems-grid">
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">BUSINESS FEATURES</span>
                     <h3><span class="icon">🏥</span> Healthcare management</h3>
                     <ul>
@@ -121,7 +123,7 @@
                     </ul>
                 </div>
 
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">SECURITY & LOGGING</span>
                     <h3><span class="icon">🔒</span> Protected medical context</h3>
                     <ul>
@@ -131,7 +133,7 @@
                         <li>Rate limiting and lockout after repeated failed logins from a single IP.</li>
                         <li>Logs for logins/logouts, profile changes, appointments, and record updates.</li>
                         <li>Monitoring of access to sensitive resources such as prescriptions and files.</li>
-                        <li>Events buffered and sent to the Dashboard with contextual metadata.</li>
+                        <li>Events buffered and sent to the Dashboard with system name, user id/role/email, action, IP, endpoint, HTTP method, timestamp, and severity.</li>
                     </ul>
                 </div>
             </div>
@@ -141,7 +143,7 @@
     <footer>
         <div class="footer-content">
             <img src="logo/white_logo.png" alt="SentinX" class="footer-logo">
-            <p style="color: var(--text-secondary); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">SentinX Security Platform</p>
+            <p style="color: var(--text-secondary); font-weight: 600;">SentinX Security Platform</p>
             <p style="color: var(--text-muted); font-size: 0.9rem;">AI-Powered Cyber Threat Prevention · Alexandria, Egypt</p>
 
             <div class="social-links">
@@ -157,6 +159,6 @@
             <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
         </div>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>
+

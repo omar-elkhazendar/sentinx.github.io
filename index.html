@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SentinX Security Platform - AI-Powered Cyber Threat Prevention. Centralized security monitoring for Banking, Airline, and Medical systems.">
     <title>SentinX Security Platform | AI-Powered Cyber Threat Prevention</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="nav-left">
-                <a href="index.html" class="logo-link">
-                    <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+            <a href="index.html" class="logo-link">
+                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false" type="button">
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="systems.html">Systems</a></li>
                 <li><a href="dashboard.html">Security Dashboard</a></li>
@@ -37,24 +39,24 @@
             <p class="tagline">AI-Powered Cyber Threat Prevention</p>
             <p>Centralized security monitoring that connects multiple systems to one intelligent dashboard. Detect, classify, and prevent cyber attacks in real time.</p>
             <div class="hero-actions">
-                <a href="systems.html" class="btn btn-primary">Explore Systems</a>
-                <a href="dashboard.html" class="btn btn-outline">View Security Dashboard</a>
+                <a href="systems.html" class="btn btn-primary">Explore the three systems</a>
+                <a href="dashboard.html" class="btn btn-outline">View security dashboard</a>
             </div>
         </section>
 
         <section id="overview">
-            <h2 class="section-title">The <span class="text-gradient-accent">Big Picture</span></h2>
+            <h2 class="section-title">The Big Picture</h2>
             <p class="section-subtitle">One central security brain, three independent business systems</p>
 
-            <div class="glass-panel big-picture">
+            <div class="big-picture">
                 <h2>Our Approach</h2>
                 <p>We built three realistic domains—banking, airline booking, and healthcare—each with embedded security logging. But the real value is what we did next:</p>
-                <blockquote>"We turned those systems into live data sources feeding a centralized, AI-driven security monitoring and response platform."</blockquote>
+                <blockquote>We turned those systems into live data sources feeding a centralized, AI-driven security monitoring and response platform.</blockquote>
                 <p>Instead of scattered logs across three apps, you get one unified timeline, AI classification, and coordinated defense—just like a real Security Operations Center.</p>
             </div>
 
             <div class="systems-grid">
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">SYSTEM 1</span>
                     <h3><span class="icon">🏦</span> Bank System</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Full online banking with accounts, cards, loans, transfers, and KYC.</p>
@@ -66,7 +68,7 @@
                         <li>Structured logging to Security Dashboard</li>
                     </ul>
                 </div>
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">SYSTEM 2</span>
                     <h3><span class="icon">✈️</span> Airline System</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Travel booking with OAuth, offers, reservations, and admin.</p>
@@ -78,7 +80,7 @@
                         <li>Centralized logging to Dashboard</li>
                     </ul>
                 </div>
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">SYSTEM 3</span>
                     <h3><span class="icon">🏥</span> Medical System</h3>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Healthcare management with patients, doctors, and records.</p>
@@ -94,10 +96,10 @@
         </section>
 
         <section id="dashboard">
-            <h2 class="section-title">Security <span class="text-gradient-accent">Dashboard</span></h2>
+            <h2 class="section-title">Security Dashboard</h2>
             <p class="section-subtitle">The central platform that turns logs into actionable security insight</p>
 
-            <div class="glass-panel dashboard-section">
+            <div class="dashboard-section">
                 <h2>How It Works</h2>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem;">Bank, Airline, and Medical systems push events to the Dashboard. AI models classify them, and the platform drives alerts and blocking.</p>
 
@@ -123,19 +125,19 @@
         </section>
 
         <section id="why">
-            <h2 class="section-title">Why <span class="text-gradient-accent">SentinX</span></h2>
+            <h2 class="section-title">Why SentinX</h2>
             <p class="section-subtitle">A strong graduation idea that mirrors real-world security operations</p>
 
             <div class="why-grid">
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>Realistic Domains</h3>
                     <p>Three simulated systems—banking, travel, healthcare—each with real business logic and security logging.</p>
                 </div>
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>Central Intelligence</h3>
                     <p>One SOC-style dashboard that aggregates telemetry, runs AI, and coordinates defense across all systems.</p>
                 </div>
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>End-to-End Flow</h3>
                     <p>Events → Logs → AI classification → Risk & category → Alert → Human or automatic action.</p>
                 </div>
@@ -146,7 +148,7 @@
     <footer>
         <div class="footer-content">
             <img src="logo/white_logo.png" alt="SentinX" class="footer-logo">
-            <p style="color: var(--text-secondary); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">SentinX Security Platform</p>
+            <p style="color: var(--text-secondary); font-weight: 600;">SentinX Security Platform</p>
             <p style="color: var(--text-muted); font-size: 0.9rem;">AI-Powered Cyber Threat Prevention · Alexandria, Egypt</p>
 
             <div class="social-links">
@@ -162,6 +164,5 @@
             <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
         </div>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>

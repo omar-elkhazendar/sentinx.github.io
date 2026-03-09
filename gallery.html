@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SentinX Security Platform - Project Gallery and Team Moments.">
     <title>Gallery | SentinX Security Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="nav-left">
-                <a href="index.html" class="logo-link">
-                    <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+            <a href="index.html" class="logo-link">
+                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false" type="button">
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="systems.html">Systems</a></li>
                 <li><a href="dashboard.html">Security Dashboard</a></li>
@@ -32,36 +34,42 @@
 
     <main>
         <section class="hero hero--subpage">
-            <h1>Project <span class="text-gradient">Gallery</span></h1>
+            <h1>Project Gallery</h1>
             <p class="tagline">Behind the scenes of SentinX</p>
             <p>A look at the graduation project presentation and the team behind the AI-powered cybersecurity platform.</p>
         </section>
 
         <!-- Presentation Section -->
         <section id="presentation">
-            <h2 class="section-title">Project <span class="text-gradient-accent">Presentation</span></h2>
+            <h2 class="section-title">Project Presentation</h2>
             <p class="section-subtitle">Showcasing the SentinX platform</p>
             
-            <div class="glass-panel" style="padding: 1rem;">
-                <!-- User should place 'presentation.jpeg' in team_photos/ -->
-                <img src="team_photos/presentation.jpeg" alt="SentinX Project Presentation" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; object-fit: cover; display: block; margin: 0 auto;">
+            <div class="system-card media-card">
+                <span class="badge">PRESENTATION</span>
+                <h3>Graduation Presentation</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">A snapshot from our SentinX platform presentation.</p>
+                <img src="team_photos/presentation.jpeg" alt="SentinX Project Presentation" class="media-img media-img--presentation">
             </div>
         </section>
 
         <!-- Team Moments Section -->
         <section id="team-moments">
-            <h2 class="section-title">Team <span class="text-gradient-accent">Moments</span></h2>
+            <h2 class="section-title">Team Moments</h2>
             <p class="section-subtitle">Collaborating on the future of security</p>
             
-            <div class="systems-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-                <div class="glass-panel" style="padding: 1rem; margin-bottom: 0;">
-                    <!-- User should place 'group1.jpeg' in team_photos/ -->
-                    <img src="team_photos/group1.jpeg" alt="SentinX Team Group Photo 1" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;">
+            <div class="systems-grid">
+                <div class="system-card">
+                    <span class="badge">MOMENT</span>
+                    <h3>Team Photo 1</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">A memory from building SentinX together.</p>
+                    <img src="team_photos/group1.jpeg" alt="SentinX Team Group Photo 1" class="media-img">
                 </div>
                 
-                <div class="glass-panel" style="padding: 1rem; margin-bottom: 0;">
-                    <!-- User should place 'group2.jpeg' in team_photos/ -->
-                    <img src="team_photos/group2.jpeg" alt="SentinX Team Group Photo 2" style="width: 100%; height: auto; border-radius: 12px; object-fit: cover;">
+                <div class="system-card">
+                    <span class="badge">MOMENT</span>
+                    <h3>Team Photo 2</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Another behind-the-scenes moment.</p>
+                    <img src="team_photos/group2.jpeg" alt="SentinX Team Group Photo 2" class="media-img">
                 </div>
             </div>
         </section>
@@ -86,6 +94,5 @@
             <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
         </div>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>

@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="SentinX Security Dashboard - AI-driven security monitoring, classification, and response.">
     <title>Security Dashboard | SentinX Security Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="nav-left">
-                <a href="index.html" class="logo-link">
-                    <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+            <a href="index.html" class="logo-link">
+                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false" type="button">
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="systems.html">Systems</a></li>
                 <li><a href="dashboard.html" class="active">Security Dashboard</a></li>
@@ -32,16 +34,16 @@
 
     <main>
         <section class="hero hero--subpage">
-            <h1>Security <span class="text-gradient">Dashboard</span></h1>
+            <h1>Security Dashboard</h1>
             <p class="tagline">From raw logs to intelligent, actionable defense</p>
             <p>The SentinX Security Dashboard is the central SOC‑style console that ingests events from all systems, runs AI classification, and orchestrates alerts and blocking.</p>
         </section>
 
         <section>
-            <h2 class="section-title">Data <span class="text-gradient-accent">Ingestion</span></h2>
+            <h2 class="section-title">Data Ingestion</h2>
             <p class="section-subtitle">Unified security telemetry from Bank, Airline, and Medical systems</p>
 
-            <div class="glass-panel dashboard-section">
+            <div class="dashboard-section">
                 <h2>Log & Attack APIs</h2>
                 <p style="color: var(--text-secondary); margin-bottom: 1rem;">
                     Each business system acts as a security sensor that continuously pushes telemetry to the Dashboard via HTTP.
@@ -68,10 +70,10 @@
         </section>
 
         <section>
-            <h2 class="section-title">AI <span class="text-gradient-accent">Classification</span> Pipeline</h2>
+            <h2 class="section-title">AI Classification Pipeline</h2>
             <p class="section-subtitle">Models that understand behavior, not just messages</p>
 
-            <div class="glass-panel dashboard-section">
+            <div class="dashboard-section">
                 <h2>From event to labeled security insight</h2>
                 <div class="dashboard-features">
                     <div class="dashboard-feature">
@@ -95,10 +97,10 @@
         </section>
 
         <section>
-            <h2 class="section-title">Visualization & <span class="text-gradient-accent">Monitoring</span></h2>
+            <h2 class="section-title">Visualization & Monitoring</h2>
             <p class="section-subtitle">A mini SOC dashboard focused on the three systems</p>
 
-            <div class="glass-panel dashboard-section">
+            <div class="dashboard-section">
                 <h2>Security views</h2>
                 <div class="dashboard-features">
                     <div class="dashboard-feature">
@@ -107,7 +109,7 @@
                     </div>
                     <div class="dashboard-feature">
                         <h4>AI dashboards</h4>
-                        <p>Per‑model views (e.g. CNN, RNN, Naive Bayes) with stats on how many events were tagged as attack vs. normal, top attack types, and confusion summaries.</p>
+                        <p>Per‑model views (e.g. CNN, RNN, Naive Bayes) with statistics on how many events were tagged as attack vs. normal, top attack types, and confusion summaries.</p>
                     </div>
                     <div class="dashboard-feature">
                         <h4>General monitoring</h4>
@@ -122,10 +124,10 @@
         </section>
 
         <section>
-            <h2 class="section-title">Response & <span class="text-gradient-accent">Feedback</span> Loop</h2>
+            <h2 class="section-title">Response & Feedback Loop</h2>
             <p class="section-subtitle">From detection to concrete action</p>
 
-            <div class="glass-panel dashboard-section">
+            <div class="dashboard-section">
                 <h2>Closing the loop</h2>
                 <div class="dashboard-features">
                     <div class="dashboard-feature">
@@ -134,7 +136,7 @@
                     </div>
                     <div class="dashboard-feature">
                         <h4>Blocking & policies</h4>
-                        <p>Operators can block IP addresses, tune auto‑block rules (for example, risk thresholds for logins), and store those as reusable policies.</p>
+                        <p>Operators can block IP addresses, tune auto‑block rules (for example, risk score thresholds for login events), and store those as reusable policies.</p>
                     </div>
                     <div class="dashboard-feature">
                         <h4>Automation</h4>
@@ -145,8 +147,8 @@
                         <p>The Dashboard also logs its own actions (alerts, blocks, status), enabling analysis of which rules are too strict or too weak and how models can be improved over time.</p>
                     </div>
                 </div>
-                <p style="color: var(--text-secondary); margin-top: 2rem; padding: 1rem; border-left: 4px solid var(--accent-primary); background: rgba(0, 240, 255, 0.05); font-style: italic;">
-                    In short: Events → Logs → AI classification → Risk & category → Alert → Human or automatic action (block, monitor, investigate).
+                <p style="color: var(--text-secondary); margin-top: 1.5rem;">
+                    In short: <strong>Events → Logs → AI classification → Risk & category → Alert → Human or automatic action (block, monitor, investigate).</strong>
                 </p>
             </div>
         </section>
@@ -155,7 +157,7 @@
     <footer>
         <div class="footer-content">
             <img src="logo/white_logo.png" alt="SentinX" class="footer-logo">
-            <p style="color: var(--text-secondary); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.1em; text-transform: uppercase;">SentinX Security Platform</p>
+            <p style="color: var(--text-secondary); font-weight: 600;">SentinX Security Platform</p>
             <p style="color: var(--text-muted); font-size: 0.9rem;">AI-Powered Cyber Threat Prevention · Alexandria, Egypt</p>
 
             <div class="social-links">
@@ -171,6 +173,6 @@
             <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
         </div>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>
+

@@ -1,68 +1,81 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('header');
-  const navToggle = document.querySelector('.nav-toggle');
-  const navLinks = document.querySelector('.nav-links');
+(() => {
+  const body = document.body;
+  const toggle = document.querySelector(".nav-toggle");
+  const navLinks = document.getElementById("primary-nav");
 
-  // Mobile navigation toggle (navbar visible and usable on all devices)
-  if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('nav-links--open');
-      navToggle.classList.toggle('nav-toggle--open');
-    });
+  if (!toggle || !navLinks) return;
 
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('nav-links--open');
-        navToggle.classList.remove('nav-toggle--open');
-      });
-    });
-  }
-
-  // Header animation on scroll (subtle shrink / stronger background)
-  const handleScroll = () => {
-    if (!header) return;
-    if (window.scrollY > 10) {
-      header.classList.add('header--scrolled');
-    } else {
-      header.classList.remove('header--scrolled');
-    }
+  const closeNav = () => {
+    body.classList.remove("nav-open");
+    toggle.setAttribute("aria-expanded", "false");
   };
 
-  handleScroll();
-  window.addEventListener('scroll', handleScroll, { passive: true });
+  const openNav = () => {
+    body.classList.add("nav-open");
+    toggle.setAttribute("aria-expanded", "true");
+  };
 
-  // Scroll reveal animations with staggered effect
-  const selectors = '.card, .dashboard-feature, .section-title, .section-subtitle, .glass-panel, .big-picture blockquote';
-  const elementsToReveal = document.querySelectorAll(selectors);
+  const isOpen = () => body.classList.contains("nav-open");
 
-  if (!elementsToReveal.length) {
-    return;
+  toggle.addEventListener("click", () => {
+    if (isOpen()) closeNav();
+    else openNav();
+  });
+
+  navLinks.addEventListener("click", (e) => {
+    const target = e.target;
+    if (target && target instanceof HTMLElement && target.closest("a")) {
+      closeNav();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeNav();
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!isOpen()) return;
+    const target = e.target;
+    if (!(target instanceof Node)) return;
+    if (toggle.contains(target)) return;
+    if (navLinks.contains(target)) return;
+    closeNav();
+  });
+
+  const mq = window.matchMedia("(min-width: 769px)");
+  const handleMq = () => {
+    if (mq.matches) closeNav();
+  };
+  if (typeof mq.addEventListener === "function") {
+    mq.addEventListener("change", handleMq);
+  } else if (typeof mq.addListener === "function") {
+    mq.addListener(handleMq);
   }
+})();
 
-  elementsToReveal.forEach(el => el.classList.add('reveal'));
+(() => {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = Array.from(elementsToReveal).indexOf(entry.target);
-          const delay = Math.min(index * 80, 600); // cap delay so it stays snappy
+  const targets = Array.from(
+    document.querySelectorAll(
+      ".big-picture, .system-card, .why-card, .dashboard-section, .dashboard-feature, .hero"
+    )
+  );
 
-          setTimeout(() => {
-            entry.target.classList.add('active');
-          }, delay);
+  if (targets.length === 0) return;
 
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  for (const el of targets) el.classList.add("reveal");
 
-    elementsToReveal.forEach(el => observer.observe(el));
-  } else {
-    // Fallback for very old browsers – just show everything
-    elementsToReveal.forEach(el => {
-      el.classList.add('active');
-    });
-  }
-});
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target);
+      }
+    },
+    { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+  );
 
+  for (const el of targets) observer.observe(el);
+})();

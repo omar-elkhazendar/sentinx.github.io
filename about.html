@@ -5,22 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="About SentinX Security Platform - AI-powered cyber threat prevention across multiple domains.">
     <title>About | SentinX Security Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <div class="nav-left">
-                <a href="index.html" class="logo-link">
-                    <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
-                </a>
-            </div>
-            <button class="nav-toggle" aria-label="Toggle navigation" type="button">
+            <a href="index.html" class="logo-link">
+                <img src="logo/white_logo.png" alt="SentinX Security Platform" class="logo-img">
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="primary-nav" aria-expanded="false" type="button">
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
                 <span class="nav-toggle-bar"></span>
             </button>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-nav">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="systems.html">Systems</a></li>
                 <li><a href="dashboard.html">Security Dashboard</a></li>
@@ -32,76 +34,70 @@
 
     <main>
         <section class="hero hero--subpage">
-            <h1>About <span class="text-gradient">SentinX</span></h1>
+            <h1>About SentinX</h1>
             <p class="tagline">AI-Powered Cyber Threat Prevention</p>
             <p>SentinX is an AI‑driven cybersecurity platform that turns three independent business systems into live data sources feeding one central security brain.</p>
         </section>
 
         <!-- TEAM SECTION -->
         <section id="team">
-            <h2 class="section-title">Meet the <span class="text-gradient-accent">Team</span></h2>
+            <h2 class="section-title">Meet the Team</h2>
             <p class="section-subtitle">The architects behind the intelligence</p>
 
-            <div class="team-grid">
-                <div class="card team-member">
-                    <div class="team-avatar-wrapper">
-                        <img src="team_photos/omar.jpeg" alt="Omar Magdy" class="team-avatar">
-                    </div>
+            <div class="systems-grid">
+                <div class="system-card">
+                    <span class="badge">TEAM</span>
                     <h3>Omar Magdy</h3>
-                    <span class="team-role">SOC Analyst</span>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">SOC Analyst</p>
+                    <img src="team_photos/omar.jpeg" alt="Omar Magdy" class="media-img">
                 </div>
-                <div class="card team-member">
-                    <div class="team-avatar-wrapper">
-                        <img src="team_photos/karim.jpeg" alt="Karim Ahmed" class="team-avatar">
-                    </div>
+                <div class="system-card">
+                    <span class="badge">TEAM</span>
                     <h3>Karim Ahmed</h3>
-                    <span class="team-role">Frontend Developer</span>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Frontend Developer</p>
+                    <img src="team_photos/karim.jpeg" alt="Karim Ahmed" class="media-img">
                 </div>
-                <div class="card team-member">
-                    <div class="team-avatar-wrapper">
-                        <img src="team_photos/adham.jpeg" alt="Adham Ahmed" class="team-avatar">
-                    </div>
+                <div class="system-card">
+                    <span class="badge">TEAM</span>
                     <h3>Adham Ahmed</h3>
-                    <span class="team-role">Backend Developer</span>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Backend Developer</p>
+                    <img src="team_photos/adham.jpeg" alt="Adham Ahmed" class="media-img">
                 </div>
-                <div class="card team-member">
-                    <div class="team-avatar-wrapper">
-                        <img src="team_photos/ibrahim.jpeg" alt="Ibrahim Hassan" class="team-avatar">
-                    </div>
+                <div class="system-card">
+                    <span class="badge">TEAM</span>
                     <h3>Ibrahim Hassan</h3>
-                    <span class="team-role">Blockchain Architect</span>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Blockchain Architect</p>
+                    <img src="team_photos/ibrahim.jpeg" alt="Ibrahim Hassan" class="media-img">
                 </div>
-                <div class="card team-member">
-                    <div class="team-avatar-wrapper">
-                        <img src="team_photos/kerelos.jpeg" alt="Kerelos Zakaria" class="team-avatar">
-                    </div>
+                <div class="system-card">
+                    <span class="badge">TEAM</span>
                     <h3>Kerelos Zakaria</h3>
-                    <span class="team-role">Penetration Tester</span>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">Penetration Tester</p>
+                    <img src="team_photos/kerelos.jpeg" alt="Kerelos Zakaria" class="media-img">
                 </div>
-                <div class="card team-member">
-                    <div class="team-avatar-wrapper">
-                        <img src="team_photos/mohamed.jpeg" alt="Mohamed Mubarak" class="team-avatar">
-                    </div>
+                <div class="system-card">
+                    <span class="badge">TEAM</span>
                     <h3>Mohamed Mubarak</h3>
-                    <span class="team-role">ML/AI Engineer</span>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">ML/AI Engineer</p>
+                    <img src="team_photos/mohamed.jpeg" alt="Mohamed Mubarak" class="media-img">
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">Our <span class="text-gradient-accent">Vision</span></h2>
+            <h2 class="section-title">Our Vision</h2>
             <p class="section-subtitle">Security that understands context, not just logs</p>
 
             <div class="why-grid">
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>Smarter monitoring</h3>
                     <p>We aim to give security teams a single place to see what is happening across banking, travel, and healthcare, instead of jumping between separate tools.</p>
                 </div>
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>AI at the core</h3>
                     <p>The platform is designed around AI models that classify behavior and detect anomalies, helping teams focus on the incidents that truly matter.</p>
                 </div>
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>Realistic simulation</h3>
                     <p>By modeling three different industries, SentinX mirrors how modern organizations really operate: many heterogeneous systems, one security operations center.</p>
                 </div>
@@ -109,23 +105,23 @@
         </section>
 
         <section>
-            <h2 class="section-title">Beyond Simple <span class="text-gradient-accent">Apps</span></h2>
+            <h2 class="section-title">Beyond Simple Apps</h2>
             <p class="section-subtitle">Why this is a strong graduation project</p>
 
             <div class="why-grid">
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>Three real domains</h3>
                     <p>You did not just build demo forms; you simulated banking, airline booking, and healthcare systems with meaningful business logic and real‑world flows.</p>
                 </div>
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>Embedded security</h3>
                     <p>Each system has its own security controls, rate limiting, validation, and logging, turning every app into a rich security telemetry producer.</p>
                 </div>
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>Central AI platform</h3>
                     <p>The separate systems feed a centralized platform that aggregates logs, runs machine learning models, and coordinates alerts and blocking decisions.</p>
                 </div>
-                <div class="card why-card">
+                <div class="why-card">
                     <h3>SOC-style operations</h3>
                     <p>SentinX mimics how a real SOC works: events come in, AI classifies them, analysts receive alerts, and automated rules can block malicious behavior.</p>
                 </div>
@@ -133,11 +129,11 @@
         </section>
 
         <section>
-            <h2 class="section-title">Who We <span class="text-gradient-accent">Serve</span></h2>
+            <h2 class="section-title">Who We Serve</h2>
             <p class="section-subtitle">Organizations that need clear visibility into modern threats</p>
 
             <div class="systems-grid">
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">SECURITY TEAMS</span>
                     <h3><span class="icon">👁️</span> Better visibility</h3>
                     <ul>
@@ -146,7 +142,7 @@
                         <li>Context‑rich alerts with users, endpoints, and full history.</li>
                     </ul>
                 </div>
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">ENGINEERING TEAMS</span>
                     <h3><span class="icon">🧩</span> Simple integration</h3>
                     <ul>
@@ -155,7 +151,7 @@
                         <li>Patterns that can be extended to new domains beyond the three demo systems.</li>
                     </ul>
                 </div>
-                <div class="card system-card">
+                <div class="system-card">
                     <span class="badge">MANAGEMENT</span>
                     <h3><span class="icon">📊</span> Clear reporting</h3>
                     <ul>
@@ -187,6 +183,5 @@
             <p class="footer-copy">© 2026 SentinX Security Platform. All rights reserved.</p>
         </div>
     </footer>
-    <script src="main.js"></script>
 </body>
 </html>
